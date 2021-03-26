@@ -43,7 +43,7 @@ while(b!=0):
 for i in range(a):
     for j in range(a):
         if(arr[i][j]==0):
-            print(" ",end='')
+            print(" ",end=' ')
         else:
             print("%c" %arr[i][j],end=' ')
     print("")   
