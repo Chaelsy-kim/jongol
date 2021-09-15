@@ -36,19 +36,23 @@ int find(int x, int y) {
 }
 
 int main() {
-    int i, j, p, q, max = 0;
+    int i, j, p, q, max = 0,empty=0;
     scanf("%d %d", &m, &n);
     for (i = 1; i <= n; i++)
         for (j = 1; j <= m; j++)
             scanf("%d", &a[i][j]);
 
     for (i = 1; i <= n; i++)
-        for (j = 1; j <= m; j++)
+        for (j = 1; j <= m; j++) {
             if (a[i][j] == 1) {
                 queue[++top][0] = i;
                 queue[top][1] = j;
             }
-    if (top == n * m - 1) {
+            else if (a[i][j] == -1)
+                empty++;
+        }
+            
+    if (n * m==empty+rear) {
         printf("%d", 0);
         return 0;
     } 
